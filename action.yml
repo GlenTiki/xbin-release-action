@@ -1,0 +1,14 @@
+name: 'xbin - Cross Binary Releaser'
+description: 'Associate a directory of binaries to a github release'
+
+inputs:
+  upload_url:
+    description: 'The URL for uploading assets to the release'
+    required: true
+  assets_path:
+    description: 'The path to the asset you want to upload'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'index.js'
