@@ -4,7 +4,9 @@
   "description": "A github action to release xgo binaries",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pre-build": "test",
+    "build": "ncc build ./index.js",
+		"test": "echo no-test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,13 @@
   "homepage": "https://github.com/glentiki/xbin-release-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.1",
-    "@actions/github": "^2.0.1"
+    "@actions/github": "^2.0.1",
+    "@zeit/ncc": "^0.21.0",
+    "husky": "^4.2.0"
+  },
+	"husky": {
+    "hooks": {
+      "pre-commit": "npm build"
+    }
   }
 }
