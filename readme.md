@@ -65,6 +65,10 @@ Following inputs can be used as `step.with` keys
 | `upload_url`    | String  | `true`                | Github release upload url. Supplied via create release action |
 | `assets_path`   | String  | `true`                | Path to directory of assets to upload                         |
 
+## Limitations
+
+Binaries that are uploaded as release artifacts may need to made executable before usage when downloaded.
+
 ## License
 
 MIT. See `LICENSE` for more details.
