@@ -14,12 +14,13 @@ async function run() {
     const uploadUrl = core.getInput('upload_url', { required: true });
     const assetsPath = core.getInput('assets_path', { required: true });
 
-		await fsPromises.access(assetsPath, fs.constnts.R_OK)
+		const fullAssetsPath = path.join(process.cwd(), assetsPath)
+		await fsPromises.access(fullAssetsPath, fs.constnts.R_OK)
 
-		const filenames = await fsPromises.readdir(assetsPath)
+		const filenames = await fsPromises.readdir(fullAssetsPath)
 
 		for (let filename of filenames) {
-			const fullpath = path.join(__dirname, assetsPath, filename)
+			const fullpath = path.join(fullAssetsPath, filename)
 			const isExe = fullpath.endsWith('.exe')
 
       // Determine content-length for header of upload asset
