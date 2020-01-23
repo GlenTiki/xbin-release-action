@@ -4,7 +4,7 @@
   "description": "A github action to release xgo binaries",
   "main": "index.js",
   "scripts": {
-    "pre-build": "test",
+    "prebuild": "npm test",
     "build": "ncc build ./index.js",
 		"test": "echo no-test"
   },
