@@ -511,7 +511,7 @@ async function run() {
     const assetsPath = core.getInput('assets_path', { required: true });
 
 		const fullAssetsPath = path.join(process.cwd(), assetsPath)
-		await fsPromises.access(fullAssetsPath, fs.constnts.R_OK)
+		await fsPromises.access(fullAssetsPath, fs.constants.R_OK)
 
 		const filenames = await fsPromises.readdir(fullAssetsPath)
 
