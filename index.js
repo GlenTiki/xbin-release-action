@@ -7,6 +7,7 @@ const fsPromises = fs.promises;
 
 async function run() {
   try {
+		console.log('running release job now')
     // Get authenticated GitHub client (Ocktokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
     const github = new GitHub(process.env.GITHUB_TOKEN);
 
