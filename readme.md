@@ -36,6 +36,7 @@ jobs:
           ldflags: -s -w
       - name: Create Release
         uses: actions/create-release@v1.0.0
+        id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -44,12 +45,13 @@ jobs:
           draft: false
           prerelease: false
       - name: Upload Release Assets
-        uses: glentiki/xbin-release-action@1.0.0
+        uses: glentiki/xbin-release-action@130bf656a4735998af6db961bd074db5cdf77d46
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           assets_path: ./build
+
 ```
 
 ## Customizing
