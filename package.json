@@ -27,7 +27,7 @@
     "@actions/core": "^1.9.1",
     "@actions/github": "^2.0.1",
     "@zeit/ncc": "^0.21.0",
-    "husky": "^4.2.0"
+    "husky": "^4.3.8"
   },
 	"husky": {
     "hooks": {
